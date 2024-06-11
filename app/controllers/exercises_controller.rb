@@ -13,6 +13,7 @@ class ExercisesController < ApplicationController
     @shops = Shop.left_outer_joins(:order_foods).where(orders: {id: order_foods})
     @shops.each.do |shop|
       puts shop.name
+    end
     #　料理とお店を結合する
     #　注文されていない料理を提供してる全てのお店を探す
   end
