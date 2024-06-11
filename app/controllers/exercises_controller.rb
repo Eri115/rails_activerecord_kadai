@@ -11,7 +11,7 @@ class ExercisesController < ApplicationController
     #   * left_outer_joinsを使うこと
   
     @shops = Shop.left_outer_joins(:order_foods).where(orders: {id: order_foods})
-    @shops.each.do |shop|
+    @shops.each do |shop|
       puts shop.name
     end
     #　料理とお店を結合する
