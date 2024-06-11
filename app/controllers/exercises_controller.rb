@@ -2,7 +2,7 @@ class ExercisesController < ApplicationController
   def exercise1
     # 【要件】注文されていないすべての料理を返すこと
     #   * left_outer_joinsを使うこと
-    @foods = Food.left_outer_joins(:orders)
+    @foods = Food.left_outer_joins(:orders).where(orders: {id: nill})
     @foods.each do |food|
       puts food.name
 
@@ -13,6 +13,7 @@ class ExercisesController < ApplicationController
     # 【要件】注文されていない料理を提供しているすべてのお店を返すこと
     #   * left_outer_joinsを使うこと
     @shops = Shop.left_outer_joins(:order_foods)
+    #@shops.each.do |shop|
   end
 
   def exercise3 
